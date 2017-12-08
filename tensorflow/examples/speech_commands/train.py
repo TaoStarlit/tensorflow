@@ -124,6 +124,10 @@ def main(_):
 
   fingerprint_input = tf.placeholder(
       tf.float32, [None, fingerprint_size], name='fingerprint_input')
+  
+  
+  fingerprint_Softmax_input = tf.placeholder(
+      tf.float32, [None, fingerprint_size + 12], name='fingerprint_input')
 
   logits, dropout_prob = models.create_model(
       fingerprint_input,
